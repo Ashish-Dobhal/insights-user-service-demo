@@ -38,8 +38,8 @@ app.post("/api/insights/login", function (req, res) {
     let userService = new user_service_1.UserService();
     userService.login(req.body.username, req.body.password, (data, error) => {
         if (error) {
-            console.log("Log In failed");
-            res.status(500).end(error);
+            let errCode = (error.name === "USER_NOT_FOUND") ? 404 : error.code;
+            res.status(errCode).end(error.message);
         }
         else {
             session_mgmt_helper_1.default.startSession(req, data);
@@ -57,5 +57,7 @@ app.use("/logs", session_mgmt_helper_1.default.validateSession, function (req, r
 app.listen(port, () => {
     logger_1.default.debug("Create Insights DB");
     console.log(`Listening at http://localhost:${port}/`);
+});
+app.use("/logOut", session_mgmt_helper_1.default.validateSession, function (req, res) {
 });
 //# sourceMappingURL=server.js.map

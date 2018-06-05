@@ -1,2 +1,1 @@
-set PORT=3000
-npm start
+tsc && node dist/server.js

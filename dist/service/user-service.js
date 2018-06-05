@@ -6,30 +6,28 @@ class UserService {
     async login(username, password, callback) {
         let userExists = await sequelize_1.UserModel.findAll({ where: { username: username } });
         if (userExists.length > 0) {
-            console.log(`User ${username} exists===========================`);
             let loggedInUsers = await sequelize_1.UserModel.findAll({ where: { username: username, password: password } });
             if (loggedInUsers.length > 0) {
-                console.log(`User ${username} exists and right pass===========================`);
                 let user = new user_model_1.User(loggedInUsers[0].username);
-                console.log("UserNAME===================" + user.userName);
                 callback(user);
             }
             else {
-                console.log(`User ${username} exists wrong pass ===========================`);
-                callback(null, 'Invalid Credentials Please Login again');
+                let error = new Error('Invalid Credentials Please Login again');
+                error.name = "INVALID_CREDENTIALS";
+                callback(null, error);
             }
         }
         else {
-            callback(null, 'User does not exists. Please signup to use the Insights Platform');
+            let error = new Error('Invalid Credentials Please Login again');
+            error.name = "USER_NOT_FOUND";
+            callback(null, error);
         }
     }
     async register(username, password, repassword, callback) {
         try {
-            console.log("Register User");
             this.validatePassword(password, repassword);
             let savedUser = await sequelize_1.UserModel.create({ username, password });
             if (savedUser) {
-                console.log("Saved User", savedUser);
                 callback(savedUser);
             }
             else {
