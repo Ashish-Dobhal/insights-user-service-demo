@@ -83,3 +83,8 @@ app.listen(port, () => {
   
     console.log(`Listening at http://localhost:${port}/`);
 });
+
+app.use("/logOut",sessionMgmtHelper.validateSession,function(req,res)
+{
+    //TODO: sessionHelper.logOut() clear session Info here
+})
