@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "target": "ES2017",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "sourceMap": true,
+      "declaration": true,
+      "noImplicitAny": false,
+      "rootDir": "./app",
+      "outDir": "./dist",
+      "allowSyntheticDefaultImports": true,
+      "pretty": true,
+
+      "removeComments": true,
+      "types" : [ "node" ],
+      "lib":[
+       "es2015"
+      ]
+    },
+    "exclude": [
+      "node_modules",
+      "dist"
+    ],
+   
+  }

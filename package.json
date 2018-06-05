@@ -1,0 +1,38 @@
+{
+  "name": "insights-user-service",
+  "version": "1.0.0",
+  "description": "Login and register module for the insights project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://codehub-repo.ad.infosys.com/ashish.dobhal/insights-user-service"
+  },
+  "keywords": [
+    "login",
+    "register",
+    "insights"
+  ],
+  "author": "@ashish.dobhal",
+  "license": "MIT",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/es6-shim": "^0.31.37",
+    "@types/express": "^4.11.1",
+    "@types/express-session": "^1.15.9",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "sequelize": "^4.37.10",
+    "sqlite3": "^4.0.0",
+    "typescript": "^2.9.1",
+    "uuid": "^3.2.1",
+    "winston": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^10.3.0"
+  }
+}
