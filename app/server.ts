@@ -3,7 +3,7 @@ import  {User}  from './models/user-model';
 import * as bodyParser from "body-parser";
 import {UserModel} from './sequelize';
 import {sequelize} from './sequelize';
-let logger = require('winston');
+import logger from "./logger";
 import * as cookieParser from "cookie-parser";
 import * as session from "express-session";
 import sessionMgmtHelper from "./session-mgmt-helper"

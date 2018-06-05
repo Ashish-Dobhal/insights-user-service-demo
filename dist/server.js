@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const express = require("express");
 const bodyParser = require("body-parser");
-let logger = require('winston');
+const logger_1 = require("./logger");
 const session = require("express-session");
 const session_mgmt_helper_1 = require("./session-mgmt-helper");
 const user_service_1 = require("./service/user-service");
@@ -48,14 +48,14 @@ app.post("/api/insights/login", function (req, res) {
     });
 });
 app.use('/liveness', function (req, res) {
-    logger.debug("/liveness");
+    logger_1.default.debug("/liveness");
     res.send("Insights: learn,share,grow");
 });
 app.use("/logs", session_mgmt_helper_1.default.validateSession, function (req, res) {
     res.send("Logs EndPoint");
 });
 app.listen(port, () => {
-    logger.debug("Create Insights DB");
+    logger_1.default.debug("Create Insights DB");
     console.log(`Listening at http://localhost:${port}/`);
 });
 //# sourceMappingURL=server.js.map
