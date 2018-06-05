@@ -56,8 +56,8 @@ app.post("/api/insights/login",function(req,res)
     {
         if(error)
         {
-            console.log("Log In failed");
-            res.status(500).end(error);
+            let errCode=(error.name==="USER_NOT_FOUND")?404:error.code;
+          res.status(errCode).end(error.message);
         }
         else
         {
