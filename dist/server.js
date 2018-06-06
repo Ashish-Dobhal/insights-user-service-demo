@@ -6,6 +6,7 @@ const logger_1 = require("./logger");
 const session = require("express-session");
 const session_mgmt_helper_1 = require("./session-mgmt-helper");
 const user_service_1 = require("./service/user-service");
+const master_data_service_1 = require("./service/master-data-service");
 const app = express();
 const port = 3000;
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,17 +48,43 @@ app.post("/api/insights/login", function (req, res) {
         }
     });
 });
-app.use('/liveness', function (req, res) {
-    logger_1.default.debug("/liveness");
+app.use('/api/insights/liveness', function (req, res) {
+    logger_1.default.debug("//api/insights/liveness");
     res.send("Insights: learn,share,grow");
 });
-app.use("/logs", session_mgmt_helper_1.default.validateSession, function (req, res) {
-    res.send("Logs EndPoint");
+app.use("/api/insights/testSession", session_mgmt_helper_1.default.validateSession, function (req, res) {
+    logger_1.default.log(`Session exists for user: ${req.session.user}`);
+    res.send('Session exists for the user');
+});
+app.use("/api/insights/categories", function (req, res) {
+    logger_1.default.log("/categories");
+    let masterDataService = new master_data_service_1.MasterDataService();
+    masterDataService.getMasterData("categories", (data, error) => {
+        if (error) {
+            res.status(500).end("Server error occurred.Please try again later");
+        }
+        else {
+            res.send(data);
+        }
+    });
+});
+app.post("/api/insights/userCategories", session_mgmt_helper_1.default.startSession, function (req, res) {
+});
+app.use("/api/insights/userCategories", session_mgmt_helper_1.default.startSession, function (req, res) {
+});
+app.use("/api/insights/logout", session_mgmt_helper_1.default.validateSession, function (req, res) {
+    session_mgmt_helper_1.default.endSession(req);
+    res.send("User logged out successfully");
 });
 app.listen(port, () => {
     logger_1.default.debug("Create Insights DB");
+    let masterDataService = new master_data_service_1.MasterDataService();
+    masterDataService.saveDataSources("categories", (data, err) => {
+        if (err)
+            logger_1.default.error(err.message);
+        else
+            logger_1.default.info(data);
+    });
     console.log(`Listening at http://localhost:${port}/`);
-});
-app.use("/logOut", session_mgmt_helper_1.default.validateSession, function (req, res) {
 });
 //# sourceMappingURL=server.js.map

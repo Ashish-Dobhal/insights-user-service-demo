@@ -1,0 +1,49 @@
+{
+ "categories":  [
+   " MicroServices",
+"Javascript" , 
+"Python ",
+"Ruby ",
+"Scala",
+"Angular",
+"Java",
+"React JS",
+"Docker",
+"Unity",
+"Machine Learning",
+"Image Processing",
+"Cloud Computing",
+"Augmented reality/Virtual reality/Virtual",
+"Android",
+"Ionic",
+"NoSQL",
+"Spring",
+"Web Development",
+"R",
+"Julia",
+"Autonomous vehicles",
+"Blockchain",
+"Chatbots",
+"IOT",
+"Robotics",
+"ECommerce",
+"Big Data",
+"DevOps",
+"Data Structure & Algorithms",
+"Node JS",
+"InMemoryDatabase",
+"Application Servers",
+"Apache Spark",
+"Serverless architecture",
+"Cryptocurrency",
+"Artificial Intelligence",
+"Voice-first computing",
+"Automated Testing",
+"UI & UX"
+      ],
+      "locations":
+      [
+          "Bangalore","Pune","Gurgaon","Hyderabad"
+      ]
+
+}

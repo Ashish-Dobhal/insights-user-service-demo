@@ -1,4 +1,5 @@
 import * as session from 'express-session';
+import logger from './logger';
 const uuidv1 = require('uuid/v1');
  const sessionMgmtHelper =
  {
@@ -20,7 +21,7 @@ const uuidv1 = require('uuid/v1');
     {
         if(req.session.user)
         {
-            console.log("Session Data Exists");
+            logger.info("Session Data Exists");
             next();
         }
         else
@@ -38,9 +39,10 @@ const uuidv1 = require('uuid/v1');
         req.session.user=user;
         console.log("User Login here"+req.session.user.userName);
     },
-    endSession:function(req:any)
+    endSession:function(req)
     {
-        // TODO: end session here
+        req.session.destroy();
+    
     },
     genuuid()
     {

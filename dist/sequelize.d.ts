@@ -1,3 +1,4 @@
 declare let sequelize: any;
 declare let UserModel: any;
-export { UserModel, sequelize };
+declare let Category: any;
+export { UserModel, Category, sequelize };

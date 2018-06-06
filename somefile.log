@@ -2,3 +2,65 @@
 {"level":"debug","message":"Create Insights DB","timestamp":"2018-06-05T20:10:20.604Z"}
 {"level":"debug","message":"Create Insights DB","timestamp":"2018-06-05T20:28:21.456Z"}
 {"level":"debug","message":"Create Insights DB","timestamp":"2018-06-05T20:29:56.785Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T17:14:06.890Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T17:16:39.313Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T17:18:54.056Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T17:19:34.126Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T17:21:27.808Z"}
+{"level":"debug","message":"/liveness","timestamp":"2018-06-06T17:28:22.594Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T17:30:35.576Z"}
+{"level":"info","message":"Session Data Exists","timestamp":"2018-06-06T17:31:50.077Z"}
+{"level":"info","message":"Session Data Exists","timestamp":"2018-06-06T17:32:15.961Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:16:23.926Z"}
+{"level":"error","message":"Error cerating categories model","timestamp":"2018-06-06T18:16:23.952Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:16:58.716Z"}
+{"level":"error","message":"Error creating categories modelError: ENOENT: no such file or directory, open 'E:\\AshishWorkSpace\\Makeathon\\data-json\\master-data.json'","timestamp":"2018-06-06T18:16:58.744Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:18:12.348Z"}
+{"level":"info","message":"Category Model Created","timestamp":"2018-06-06T18:18:12.376Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:18:46.995Z"}
+{"level":"info","message":"Category Model Created","timestamp":"2018-06-06T18:18:47.024Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:19:11.755Z"}
+{"level":"info","message":"Category Model Created","timestamp":"2018-06-06T18:19:11.781Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:19:34.159Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:20:08.672Z"}
+{"level":"info","message":"Category Model Created","timestamp":"2018-06-06T18:20:08.707Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:21:32.101Z"}
+{"level":"info","message":"Category Model Created","timestamp":"2018-06-06T18:21:32.137Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:23:16.779Z"}
+{"level":"info","message":"Category Model Created","timestamp":"2018-06-06T18:23:16.809Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:26:24.206Z"}
+{"level":"info","message":"Categories Created Successully","timestamp":"2018-06-06T18:26:24.232Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:30:44.144Z"}
+{"level":"info","message":"Categories Created Successully","timestamp":"2018-06-06T18:30:44.183Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:36:12.462Z"}
+{"level":"info","message":"Categories Created Successully","timestamp":"2018-06-06T18:36:12.500Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:37:42.643Z"}
+{"level":"info","message":"Categories Created Successully","timestamp":"2018-06-06T18:37:42.678Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T18:48:53.747Z"}
+{"level":"info","message":"Categories Created Successully","timestamp":"2018-06-06T18:48:53.788Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:03:17.152Z"}
+{"level":"info","message":"${dataSourceName} Created Successully","timestamp":"2018-06-06T19:03:17.174Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:04:14.681Z"}
+{"level":"info","message":"${dataSourceName} Created Successully","timestamp":"2018-06-06T19:04:14.783Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:05:47.684Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:05:47.716Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:06:54.876Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:06:54.908Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:08:03.703Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:08:03.735Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:08:25.566Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:08:25.601Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:13:46.616Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:13:50.252Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:14:35.097Z"}
+{"level":"error","message":"Error creating categories modelSequelizeTimeoutError: SQLITE_BUSY: database is locked","timestamp":"2018-06-06T19:14:41.218Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:15:02.771Z"}
+{"level":"error","message":"Error creating categories modelSequelizeTimeoutError: SQLITE_BUSY: database is locked","timestamp":"2018-06-06T19:15:08.894Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:15:25.529Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:15:29.046Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:32:10.934Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:32:14.338Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:34:01.159Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:34:04.691Z"}
+{"level":"debug","message":"Create Insights DB","timestamp":"2018-06-06T19:48:16.521Z"}
+{"level":"info","message":"categories Created Successully","timestamp":"2018-06-06T19:48:20.161Z"}

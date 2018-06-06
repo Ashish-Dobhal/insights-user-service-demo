@@ -5,7 +5,9 @@ let Sequelize = require('sequelize');
 let sequelize = new Sequelize('insights', null, null, {
     dialect: "sqlite",
     storage: './insights.sqlite',
-    operatorsAliases: false
+    operatorsAliases: false,
+    ifNotExists: true,
+    logging: false
 });
 exports.sequelize = sequelize;
 let UserModel = sequelize.define('User', {
@@ -13,8 +15,12 @@ let UserModel = sequelize.define('User', {
     password: Sequelize.STRING
 });
 exports.UserModel = UserModel;
+let Category = sequelize.define('Category', {
+    name: Sequelize.STRING
+});
+exports.Category = Category;
 sequelize
-    .sync({ force: true })
+    .sync()
     .then(function (success) {
     logger.log('sqlite-con', 'Sqlite db started');
 }, function (err) {

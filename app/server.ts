@@ -8,6 +8,7 @@ import * as cookieParser from "cookie-parser";
 import * as session from "express-session";
 import sessionMgmtHelper from "./session-mgmt-helper"
 import {UserService} from "./service/user-service";
+import { MasterDataService } from './service/master-data-service';
 
 
 //TODO configure winston logger
@@ -54,6 +55,7 @@ app.post("/api/insights/login",function(req,res)
     let userService:UserService= new UserService();
     userService.login(req.body.username,req.body.password,(data,error)=>
     {
+       //TODO: while login too validate session if present continue else restart Priority
         if(error)
         {
             let errCode=(error.name==="USER_NOT_FOUND")?404:error.code;
@@ -67,24 +69,63 @@ app.post("/api/insights/login",function(req,res)
     });
 });
 
-app.use('/liveness',function(req,res)
+app.use('/api/insights/liveness',function(req,res)
 {
-    logger.debug("/liveness"); 
+    logger.debug("//api/insights/liveness"); 
     res.send("Insights: learn,share,grow");
 });
-app.use("/logs",sessionMgmtHelper.validateSession,function(req,res)
+app.use("/api/insights/testSession",sessionMgmtHelper.validateSession,function(req,res)
 {
-res.send("Logs EndPoint")
+    logger.log(`Session exists for user: ${req.session.user}`);
+    res.send('Session exists for the user');
+});
+app.use("/api/insights/categories",function(req,res)
+{
+    logger.log("/categories");
+    let masterDataService=new MasterDataService();
+    masterDataService.getMasterData("categories",(data,error)=>
+    {
+        if(error)
+        {
+            
+            res.status(500).end("Server error occurred.Please try again later");
+        }
+        else
+        {
+        // return type of this method   [{id:id,name:name}]
+        res.send(data);
+        }
+    });
+});
+app.post("/api/insights/userCategories",sessionMgmtHelper.startSession,function(req,res)
+{
+//TODO: save user categories ask team ob db structure
+});
+app.use("/api/insights/userCategories",sessionMgmtHelper.startSession,function(req,res)
+{
+//TODO: get User categories here
+});
+
+
+app.use("/api/insights/logout",sessionMgmtHelper.validateSession,function(req,res)
+{
+    sessionMgmtHelper.endSession(req);
+    res.send("User logged out successfully");
 })
-// Serve the application at the given port
+app.use(function (err, req, res, next) {
+    console.error(err.stack)
+    res.status(404).send('Server issue.Please try again later');
+  })
 app.listen(port, () => {
     //TODO: create DB on server startup
     logger.debug("Create Insights DB");
-  
+    let masterDataService= new MasterDataService();
+    masterDataService.saveDataSources("categories",(data,err)=>
+    {
+        if(err)
+            logger.error(err.message);
+        else
+            logger.info(data);
+         });
     console.log(`Listening at http://localhost:${port}/`);
 });
-
-app.use("/logOut",sessionMgmtHelper.validateSession,function(req,res)
-{
-    //TODO: sessionHelper.logOut() clear session Info here
-})

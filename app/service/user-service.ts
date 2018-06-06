@@ -55,6 +55,10 @@ async register(username,password,repassword,callback)
 }
 validatePassword(pass,repass)
 {
+   if(pass===null || repass===null)
+   {
+       throw new Error("Please enter the passwords again. Passwird and Repassword cannot be empty");
+   }
     if(pass===repass)
     {
         return;

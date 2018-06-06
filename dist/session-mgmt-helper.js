@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const session = require("express-session");
+const logger_1 = require("./logger");
 const uuidv1 = require('uuid/v1');
 const sessionMgmtHelper = {
     expressSession() {
@@ -16,7 +17,7 @@ const sessionMgmtHelper = {
     },
     validateSession: function (req, res, next) {
         if (req.session.user) {
-            console.log("Session Data Exists");
+            logger_1.default.info("Session Data Exists");
             next();
         }
         else {
@@ -30,6 +31,7 @@ const sessionMgmtHelper = {
         console.log("User Login here" + req.session.user.userName);
     },
     endSession: function (req) {
+        req.session.destroy();
     },
     genuuid() {
         return uuidv1();
